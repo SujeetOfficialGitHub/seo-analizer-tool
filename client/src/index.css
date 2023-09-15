@@ -1,0 +1,210 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+:root{
+  --bg-color: orange;
+  --text-color: white;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container{
+  margin: 10px 5%;
+  max-width: 1800px;
+}
+
+/* input form for send url  */
+.form__input-url{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 300px;
+}
+.form__input-url input{
+  border: 2px solid var(--bg-color);
+  border-radius: 5px;
+  padding: 8px 2px;
+  font-size: 20px;
+}
+.form__input-url button{
+  border: 2px solid var(--bg-color);
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 8px 2px;
+  font-size: 20px;
+  cursor: pointer;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.form__input-url button:hover{
+  background: tomato;
+  color: var(--text-color);
+}
+
+.form__input-url button svg{
+  animation: loading 1s linear infinite;
+  margin-left: 2px;
+}
+
+.full-loader{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0, .3);
+  width: 100vw;
+  height: 100vh;
+}
+.full-loader svg{
+  font-size: 50px;
+  animation: loading 1s linear infinite;
+}
+@keyframes loading {
+  100%{
+    rotate: 360deg;
+  }
+}
+
+
+
+
+
+/* for analized page  */
+.requested-url{
+  font-size: 28px;
+}
+.circle-progress{
+  width: 200px;
+  margin: auto;
+}
+.onpage-results__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.onpage-results__header div{
+  background: blue;
+  color: white;
+  padding: 5px 10px;
+  width: 200px;
+  height: fit-content;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.onpage-results__values-content{
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  gap: 20px;
+}
+.onpage-results__text-content{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  gap: 10px;
+}
+.text-content__item{
+  display: flex;
+  text-align: start;
+}
+.h-tags{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  gap: 10px;
+}
+
+
+
+.speed-insights{
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  gap: 10px;
+}
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 998px){
+  .onpage-results__text-content{
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+  }
+}
+@media (max-width: 768px){
+  .requested-url{
+    font-size: 20px;
+  }
+  .circle-progress{
+    width: 150px;
+  }
+  .onpage-results__values-content{
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+  }
+  .onpage-results__text-content{
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+  }
+  .h-tags{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(auto, 1fr));
+    gap: 10px;
+  }
+  .speed-insights{
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .requested-url{
+    font-size: 18px;
+  }
+  .circle-progress{
+    width: 100px;
+  }
+  .onpage-results__header div{
+    width: fit-content;
+  }
+  .onpage-results__values-content{
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+  }
+  .onpage-results__text-content{
+    grid-template-columns: repeat(1, minmax(auto, 1fr));
+  }
+}
+@media (max-width: 300px) {
+  .requested-url{
+    font-size: 15px;
+  }
+  .circle-progress{
+    width: 80px;
+  }
+  .onpage-results__values-content{
+    grid-template-columns: repeat(1, minmax(auto, 1fr));
+  }
+  .onpage-results__text-content{
+    grid-template-columns: repeat(1, minmax(auto, 1fr));
+  }
+  .speed-insights{
+    grid-template-columns: repeat(1, minmax(auto, 1fr));
+  }
+}
