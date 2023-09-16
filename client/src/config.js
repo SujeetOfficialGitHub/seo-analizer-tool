@@ -3,7 +3,7 @@ const config = {
         apiUrl: 'http://localhost:8000'
     },
     production: {
-        apiUrl: 'https://seo-analizer-tool.vercel.app'
+        apiUrl: 'https://seo-tool-5s3j.onrender.com'
     }
 }
 
