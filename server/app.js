@@ -4,20 +4,15 @@ const cors = require('cors')
 
 const app = express()
 
-// Specify the allowed origins as an array of URLs
-const allowedOrigins = ['https://seo-analizer-tool-f7yy.vercel.app/', 'https://localhost:3000'];
-
-// Configure CORS to allow only the specified origins
 app.use(cors({
-  origin: allowedOrigins,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Enable credentials (cookies, authorization headers)
-}));
+  origin: [
+    'https://seo-analizer-tool-f7yy.vercel.app',
+    'http://localhost:3000'
+  ],
+  credentials: true
+}))
 
 
-
-
-app.use(cors())
 app.use(express.json())
 
 const mainRoutes = require('./routes/mainRoutes')
