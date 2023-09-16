@@ -10,7 +10,7 @@ app.use(express.json())
 const mainRoutes = require('./routes/mainRoutes')
 app.use('/api', mainRoutes) 
 
-app.get('/', (res, res) => {
+app.get('/', (req, res) => {
   res.send('API is running')
 })
 
